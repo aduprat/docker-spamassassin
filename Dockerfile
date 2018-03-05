@@ -36,4 +36,4 @@ COPY run.sh /
 
 EXPOSE 783
 
-CMD ["/run.sh"]
+ENTRYPOINT /spamd.sh
