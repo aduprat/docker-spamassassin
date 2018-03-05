@@ -7,4 +7,5 @@ spamd --username debian-spamd \
       --helper-home-dir /var/lib/spamassassin \
       --ip-address \
       --allowed-ips 0.0.0.0/0 \
-      --allow-tell
+      --allow-tell \
+      --debug bayes,learn
