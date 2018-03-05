@@ -28,11 +28,16 @@ RUN mkdir -p /etc/spamassassin/sa-update-keys && \
 
 RUN sed -i 's/^logfile = .*$/logfile = \/dev\/stderr/g' /etc/razor/razor-agent.conf
 
+RUN mkdir /etc/mail/spamassassin/bayes_db && \
+    chmod -R 777 /etc/mail/spamassassin/bayes_db
+
 COPY spamd.sh /
 
 COPY rule-update.sh /
 
 COPY run.sh /
+
+COPY local.cf /etc/spamassassin/
 
 EXPOSE 783
 
