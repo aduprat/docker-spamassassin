@@ -34,6 +34,8 @@ COPY rule-update.sh /
 
 COPY run.sh /
 
+COPY local.cf /etc/spamassassin/
+
 EXPOSE 783
 
 ENTRYPOINT /spamd.sh
